@@ -36,6 +36,8 @@ services:
 4. Открыть браузер, ввести http://127.0.0.1:5341. Откроется веб панель. Логин для входа - admin, пароль - см. в файле выше
 5. Ввести новый пароль (минимум 8 символов)
 
+    ![Веб панель](.img/img_1.png)
+
 ### Базовые примеры работы 
 
 ## Serilog
@@ -43,7 +45,35 @@ services:
 Serilog — это библиотека для логирования в .NET-приложениях, которая поддерживает структурированные логи. Она позволяет легко записывать и анализировать события, предоставляя гибкие возможности для интеграции с различными хранилищами и платформами. Serilog поддерживает множество выходных форматов, включая JSON, и предлагает широкие возможности для фильтрации и настройки логов. Библиотека обеспечивает простоту использования и высокую производительность, позволяя получать подробную информацию о работе приложений и быстрее решать возникающие проблемы.
 
 ### Примеры конфигурирования
-1. Создание интстанс Serilog
+1. Установить следующие библиотеки
+```bash
+$ dotnet add package Serilog
+$ dotnet add package Serilog.Sinks.Console
+$ dotnet add package Serilog.Sinks.File
+$ dotnet add package System.Net.Http
+```
+2. Список зависимостей, которые подгружаются и нужны для сборки
+```xml
+<package id="Serilog" version="4.2.0" targetFramework="net472" />
+<package id="Serilog.Sinks.Console" version="6.1.1" targetFramework="net472" />
+<package id="Serilog.Sinks.File" version="6.0.0" targetFramework="net472" />
+<package id="Serilog.Sinks.Seq" version="9.0.0" targetFramework="net472" />
+<package id="System.Buffers" version="4.5.1" targetFramework="net472" />
+<package id="System.Diagnostics.DiagnosticSource" version="8.0.1" targetFramework="net472" />
+<package id="System.IO" version="4.3.0" targetFramework="net472" />
+<package id="System.Memory" version="4.5.5" targetFramework="net472" />
+<package id="System.Net.Http" version="4.3.4" targetFramework="net472" />
+<package id="System.Numerics.Vectors" version="4.5.0" targetFramework="net472" />
+<package id="System.Runtime" version="4.3.0" targetFramework="net472" />
+<package id="System.Runtime.CompilerServices.Unsafe" version="6.0.0" targetFramework="net472" />
+<package id="System.Security.Cryptography.Algorithms" version="4.3.0" targetFramework="net472" />
+<package id="System.Security.Cryptography.Encoding" version="4.3.0" targetFramework="net472" />
+<package id="System.Security.Cryptography.Primitives" version="4.3.0" targetFramework="net472" />
+<package id="System.Security.Cryptography.X509Certificates" version="4.3.0" targetFramework="net472" />
+<package id="System.Threading.Channels" version="8.0.0" targetFramework="net472" />
+<package id="System.Threading.Tasks.Extensions" version="4.5.4" targetFramework="net472" />
+```
+3. Создание интстанс Serilog
 ```csharp
 var logger = new LoggerConfiguration()
     //Минимальный уровень логирования
@@ -83,11 +113,11 @@ var logger = new LoggerConfiguration()
     
     Log.Logger = logger;
 ```
-2. Привязка к Singleton Serilog.ILog, доступ к которому возможен из любого участка кода
+4. Привязка к Singleton Serilog.ILog, доступ к которому возможен из любого участка кода
 ```csharp
 Log.Logger = logger;
 ```
-3. Примеры отправки логов для разных уровней логгирования
+5. Примеры отправки логов для разных уровней логгирования
 ```csharp
     Log.Information("{ID}: {Arg1} - {Message}", id, arg1, message);
     Log.Debug("{ID}: {Arg1} - {Message}", id, arg1, message);
@@ -101,9 +131,9 @@ Log.Logger = logger;
 * id, arg1, message - переменные, которые передаются в виде лога на сервер
 * Пример отображения лога
 
-![img.png](img.png)
+    ![Пример лога](.img/img.png)
 
-4. Обязательно!!! Настроить обработку необрабатываемых исключений и закрытие приложения - принудительное или по дейсвтию пользователя - через вызов метода Log.CloseAndFlush();
+6. Обязательно!!! Настроить обработку необрабатываемых исключений и закрытие приложения - принудительное или по дейсвтию пользователя - через вызов метода Log.CloseAndFlush();
 
 Перехват необрабатываемых исключений
 ```csharp

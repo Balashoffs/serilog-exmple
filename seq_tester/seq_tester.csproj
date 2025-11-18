@@ -106,8 +106,9 @@
       <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include=".img\img.png" />
+      <Content Include=".img\img_1.png" />
       <Content Include="docker-compose.yaml" />
-      <Content Include="img.png" />
       <Content Include="README.md" />
     </ItemGroup>
     <ItemGroup>
