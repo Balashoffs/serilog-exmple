@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading;
 using Serilog;
 using Serilog.Context;
-using Serilog.Events;
 
 namespace seq_tester
 {
@@ -22,19 +21,14 @@ namespace seq_tester
                     .WriteTo.File("seq_tester/.log/log.txt",
                         outputTemplate:
                         "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}] [{Level:u3}] {Message:lj}{NewLine}{Exception}",
-
                         // File rotation
                         rollingInterval: RollingInterval.Day,
-
                         // Maximum size before rollover (e.g., 10MB)
                         fileSizeLimitBytes: 10_485_760,
-
                         // Encoding
                         encoding: System.Text.Encoding.UTF8,
-
                         // Shared access for file (allow multiple processes)
                         shared: false,
-
                         // Auto-flush after each write
                         flushToDiskInterval: TimeSpan.FromSeconds(1))
                     .WriteTo.Seq("http://localhost:5341") // Write to Seq server
