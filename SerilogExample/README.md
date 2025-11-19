@@ -53,25 +53,25 @@ $ dotnet add package Serilog.Sinks.File
 $ dotnet add package System.Net.Http
 ```
 2. Список зависимостей, которые подгружаются и нужны для сборки
-```xml
-<package id="Serilog" version="4.2.0" targetFramework="net472" />
-<package id="Serilog.Sinks.Console" version="6.1.1" targetFramework="net472" />
-<package id="Serilog.Sinks.File" version="6.0.0" targetFramework="net472" />
-<package id="Serilog.Sinks.Seq" version="9.0.0" targetFramework="net472" />
-<package id="System.Buffers" version="4.5.1" targetFramework="net472" />
-<package id="System.Diagnostics.DiagnosticSource" version="8.0.1" targetFramework="net472" />
-<package id="System.IO" version="4.3.0" targetFramework="net472" />
-<package id="System.Memory" version="4.5.5" targetFramework="net472" />
-<package id="System.Net.Http" version="4.3.4" targetFramework="net472" />
-<package id="System.Numerics.Vectors" version="4.5.0" targetFramework="net472" />
-<package id="System.Runtime" version="4.3.0" targetFramework="net472" />
-<package id="System.Runtime.CompilerServices.Unsafe" version="6.0.0" targetFramework="net472" />
-<package id="System.Security.Cryptography.Algorithms" version="4.3.0" targetFramework="net472" />
-<package id="System.Security.Cryptography.Encoding" version="4.3.0" targetFramework="net472" />
-<package id="System.Security.Cryptography.Primitives" version="4.3.0" targetFramework="net472" />
-<package id="System.Security.Cryptography.X509Certificates" version="4.3.0" targetFramework="net472" />
-<package id="System.Threading.Channels" version="8.0.0" targetFramework="net472" />
-<package id="System.Threading.Tasks.Extensions" version="4.5.4" targetFramework="net472" />
+```txt
+package id="Serilog" version="4.2.0" targetFramework="net472"
+package id="Serilog.Sinks.Console" version="6.1.1" targetFramework="net472"
+package id="Serilog.Sinks.File" version="6.0.0" targetFramework="net472"
+package id="Serilog.Sinks.Seq" version="9.0.0" targetFramework="net472"
+package id="System.Buffers" version="4.5.1" targetFramework="net472"
+package id="System.Diagnostics.DiagnosticSource" version="8.0.1" targetFramework="net472"
+package id="System.IO" version="4.3.0" targetFramework="net472"
+package id="System.Memory" version="4.5.5" targetFramework="net472"
+package id="System.Net.Http" version="4.3.4" targetFramework="net472"
+package id="System.Numerics.Vectors" version="4.5.0" targetFramework="net472"
+package id="System.Runtime" version="4.3.0" targetFramework="net472"
+package id="System.Runtime.CompilerServices.Unsafe" version="6.0.0" targetFramework="net472"
+package id="System.Security.Cryptography.Algorithms" version="4.3.0" targetFramework="net472"
+package id="System.Security.Cryptography.Encoding" version="4.3.0" targetFramework="net472"
+package id="System.Security.Cryptography.Primitives" version="4.3.0" targetFramework="net472"
+package id="System.Security.Cryptography.X509Certificates" version="4.3.0" targetFramework="net472"
+package id="System.Threading.Channels" version="8.0.0" targetFramework="net472"
+package id="System.Threading.Tasks.Extensions" version="4.5.4" targetFramework="net472"
 ```
 3. Создание интстанс Serilog
 ```csharp
