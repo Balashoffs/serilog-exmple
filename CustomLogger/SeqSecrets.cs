@@ -1,6 +1,6 @@
 using System;
 
-namespace SerilogExample.SeriogLogger
+namespace CustomLogger
 {
     /// <summary>
     /// Секреты для доступа к Seq сервер

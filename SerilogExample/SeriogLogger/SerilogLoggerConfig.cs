@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using CustomLogger;
 using Serilog;
 using Serilog.Core;
 
@@ -14,9 +15,9 @@ namespace SerilogExample.SeriogLogger
     /// </summary>
     public static class SerilogLoggerConfig
     {
-        public static ILogger Build(SeqSecrets secrets, ILogEventEnricher[] eventEnrichers)
+        public static Logger Build(SeqSecrets secrets, ILogEventEnricher[] eventEnrichers)
         {
-            ILogger logger = new LoggerConfiguration()
+            return new LoggerConfiguration()
                 // Read from appsettings.json
                 .MinimumLevel.Debug()
                 .Enrich.With(eventEnrichers)
@@ -36,9 +37,6 @@ namespace SerilogExample.SeriogLogger
                     flushToDiskInterval: TimeSpan.FromSeconds(1))
                 .WriteTo.Seq(secrets.Host, apiKey: secrets.ApiKey) // Write to Seq server
                 .CreateLogger();
-
-            Log.Logger = logger;
-            return logger;
         }
     }
 }

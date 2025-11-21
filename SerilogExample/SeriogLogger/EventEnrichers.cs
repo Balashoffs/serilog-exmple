@@ -12,7 +12,7 @@ namespace SerilogExample.SeriogLogger
     {
        private ILogEventEnricher[] Enrichers { get;  set; }
 
-       private EventEnrichers(Dictionary<string, string> properties)
+       private EventEnrichers(Dictionary<string, object> properties)
        {
            Enrichers = new ILogEventEnricher[properties.Count];
            int i = 0;
@@ -31,23 +31,9 @@ namespace SerilogExample.SeriogLogger
        ///
        /// properties - Глобальные параметры, свойственны приложению
        /// <returns>ILogEventEnricher[]</returns>
-       public static ILogEventEnricher[] Build(Dictionary<string, string> externals)
+       public static ILogEventEnricher[] Build(Dictionary<string, object> externals)
        {
-           Dictionary<string, string> properties = new Dictionary<string, string>()
-           {
-               { "PluginName", "Plugin1" },
-               { "RevitUser", "bau" },
-           };
-
-           if (externals.Count > 0)
-           {
-               foreach (var keyValuePair in externals)
-               {
-                   properties.Add(keyValuePair.Key, keyValuePair.Value);
-               }
-           }
-
-           EventEnrichers instance = new EventEnrichers(properties);
+           EventEnrichers instance = new EventEnrichers(externals);
 
            return instance.Enrichers;
        }

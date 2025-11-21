@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogExample", "SerilogExample\SerilogExample.csproj", "{331070EF-A6CC-4F87-9D3C-B4BE837EA7BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4netExample", "Log4netExample\Log4netExample.csproj", "{A4A51233-FE3B-4757-83B1-9DDF43440364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitPlugin", "RevitPlugin\RevitPlugin.csproj", "{ED711E0B-BA1A-4A6A-8255-905D2A64808C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLogger", "CustomLogger\CustomLogger.csproj", "{60832920-7C32-4C6E-87FF-1C2B3993E26C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{331070EF-A6CC-4F87-9D3C-B4BE837EA7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{331070EF-A6CC-4F87-9D3C-B4BE837EA7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{331070EF-A6CC-4F87-9D3C-B4BE837EA7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A51233-FE3B-4757-83B1-9DDF43440364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A51233-FE3B-4757-83B1-9DDF43440364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A51233-FE3B-4757-83B1-9DDF43440364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A51233-FE3B-4757-83B1-9DDF43440364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED711E0B-BA1A-4A6A-8255-905D2A64808C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED711E0B-BA1A-4A6A-8255-905D2A64808C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED711E0B-BA1A-4A6A-8255-905D2A64808C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED711E0B-BA1A-4A6A-8255-905D2A64808C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60832920-7C32-4C6E-87FF-1C2B3993E26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60832920-7C32-4C6E-87FF-1C2B3993E26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60832920-7C32-4C6E-87FF-1C2B3993E26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60832920-7C32-4C6E-87FF-1C2B3993E26C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
