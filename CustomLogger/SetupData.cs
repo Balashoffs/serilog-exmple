@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using CustomLogger;
 
-namespace RevitPlugin
+
+namespace CustomLogger
 {
     public class SetupData
     {
